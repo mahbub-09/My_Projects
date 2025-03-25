@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Doctor Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #00bcd4, #2196f3); /* Bluish gradient */
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            width: 96%;
+            color: white;
+            font-size: 3rem;
+            text-align: center;
+            margin-top: 40px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #006400; /* Dark Green background for the hospital name */
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block; /* To fit the hospital name */
+        }
+
+        .container {
+            width: 80%;
+            margin: 40px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .welcome-message {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .button-group {
+            display: block; /* Changed to block to separate the buttons */
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .button-group a {
+            text-decoration: none;
+            background-color: #006400; /* Dark Green */
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            margin: 10px 0; /* Space between the buttons */
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        .button-group a:hover {
+            background-color: #004d00; /* Even darker green */
+        }
+
+        /* Footer styling */
+        .footer {
+            text-align: center;
+            margin-top: auto;
+            background-color: #006400; /* Dark Green */
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 10px 0;
+            font-size: 0.9rem;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        form {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        input[type="submit"] {
+            background-color: #f44336; /* Red for Logout */
+            color: white;
+            font-size: 1.2rem;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #d32f2f; /* Darker red */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>HOSPITAL X</h1>
+        <div class="welcome-message">
+            <p>Hello Dr. <span th:text="${username}"></span>!</p>
+        </div>
+
+        <div class="button-group">
+            <a th:href="@{/jsoncalendar}">Schedule</a>
+            <a th:href="@{/doctors/doctorAppointments}">Appointments</a>
+        </div>
+
+        <form action="#" th:action="@{/logout}">
+            <input type="submit" value="Logout">
+        </form>
+    </div>
+
+    <div class="footer">
+        <hr>
+        <p>&copy; 2024 Hospital X. All rights reserved.</p>
+    </div>
+</body>
+</html>

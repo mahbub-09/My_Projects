@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Patient Profile</title>
+    <style>
+        /* General Styles */
+        body {
+            background: linear-gradient(to right, #00bcd4, #2196f3);
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Hospital Name Box */
+        .header-box {
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #006400; /* Dark Green */
+            color: white;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 80%;
+        }
+
+        hr {
+            border: 1px solid #006400; /* Dark Green */
+            margin: 20px 0;
+        }
+
+        /* Button Styles */
+        form input[type="submit"],
+        a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        form input[type="submit"] {
+            background-color: #006400; /* Dark Green */
+            color: white;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #004d00; /* Even darker green */
+        }
+
+        a {
+            background-color: #e7f7e7;
+            color: #006400; /* Dark Green */
+        }
+
+        a:hover {
+            background-color: #006400; /* Dark Green */
+            color: white;
+        }
+
+        /* Alert Box */
+        .alert {
+            padding: 15px;
+            margin-top: 20px;
+            color: white;
+            background-color: #f44336;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* Container Styles */
+        .container {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            text-align: center;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer Styles */
+        .footer {
+            text-align: center;
+            margin-top: auto;
+            background-color: #006400;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 10px 0;
+            font-size: 0.9rem;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Logout Button */
+        .logout-btn {
+            background-color: #006400; /* Dark Green */
+            color: white;
+            padding: 10px 20px;
+            font-size: 14px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .logout-btn:hover {
+            background-color: #004d00; /* Even darker green */
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Box -->
+    <div class="header-box">
+        HOSPITAL X
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <p>Hello! <span th:text="${username}"></span></p>
+
+        <!-- Horizontal Line -->
+        <hr>
+
+        <!-- Navigation Links -->
+        <div>
+            <a th:href="@{patients/myAppointments}">View Appointments</a>
+            <a th:href="@{/viewPrescription}">View Prescriptions</a>
+            <a th:href="@{patients/cancelAppointment}">Cancel Appointment</a>
+        </div>
+
+        <!-- Horizontal Line -->
+        <hr>
+
+        <!-- Appointment Scheduling -->
+        <p>Schedule your visit by booking an appointment: <a th:href="@{/add}">Book Appointment</a></p>
+
+        <!-- Logout Button -->
+        <form action="#" th:action="@{/logout}">
+            <input class="logout-btn" type="submit" value="Logout">
+        </form>
+
+        <!-- Alert Message -->
+        <div th:if="${message}" th:text="${message}" th:class="${'alert ' + alertClass}"></div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Hospital X. All rights reserved.</p>
+    </div>
+</body>
+</html>

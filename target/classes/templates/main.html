@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Welcome to Hospital X</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #00bcd4, #2196f3);
+            color: #333;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Hospital Name Box */
+        .hospital-name {
+            background-color: #006400; /* Dark Green */
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+            text-align: center;
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Button Container */
+        .options {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* Button Styles */
+        .options a {
+            display: inline-block;
+            width: 200px;
+            text-align: center;
+            padding: 15px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+            background-color: #006400; /* Dark Green */
+            border: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .options a:hover {
+            background-color: #004d00; /* Even darker green */
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 0.9rem;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Centered Hospital Name -->
+    <div class="hospital-name">
+        Welcome to Hospital X
+    </div>
+
+    <!-- Buttons below the header -->
+    <div class="options">
+        <a th:href="@{/patients}">Patient Login</a>
+        <a th:href="@{/doctors}">Doctor Login</a>
+        <a th:href="@{/receptionist}">Receptionist Login</a>
+        <a th:href="@{/signup}">Patient Sign Up</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 Hospital X. All Rights Reserved.
+    </footer>
+</body>
+</html>

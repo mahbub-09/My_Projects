@@ -1,0 +1,308 @@
+<!--<?xml version="1.0" encoding="ISO-8859-1" ?>-->
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<body style="background-color:powderblue;">-->
+
+<!--<style>-->
+<!--table,th,td{-->
+<!--border: 1px solid black;-->
+<!--padding: 3px;-->
+<!--text-align: center;-->
+<!--}-->
+<!--table{-->
+<!--border-spacing: 5px;-->
+<!--}-->
+<!--</style>-->
+<!--<hr> <hr>-->
+<!--	<H1 align="center">HOSPITAL SWERSIE</H1>-->
+<!--	<hr> -->
+<!--		<a th:href="@{/doctors}">homepage</a>-->
+<!--	<hr>-->
+<!--	<br>-->
+<!--	<br>-->
+<!--<table style="width:100%">-->
+<!--        <tr>-->
+<!--            <th>Appointment ID</th>-->
+<!--            <th>Patient Name</th>-->
+<!--            <th>Date</th>-->
+<!--            <th>Prescription</th>-->
+<!--        </tr>-->
+<!--        <tr th:each="Appointment : ${Appointments}">-->
+<!--            <td th:text="${Appointment.appointment_id}"></td>-->
+<!--          	<td th:text="${Appointment.patientName}"></td>-->
+<!--          	<td th:text="${Appointment.date}"></td>-->
+<!--          	<td th:text="${Appointment.Prescription}"></td>-->
+<!--          	-->
+<!--        </tr>-->
+<!--    </table>-->
+<!--</body>-->
+<!--</html>-->
+
+
+<!--<?xml version="1.0" encoding="ISO-8859-1" ?>-->
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--    <meta charset="ISO-8859-1">-->
+<!--    <title>Hospital Swersie - Appointments</title>-->
+<!--    <style>-->
+<!--        /* General body styling */-->
+<!--        body {-->
+<!--            background-color: #f0f8ff; /* Light sky blue */-->
+<!--            font-family: 'Arial', sans-serif;-->
+<!--            margin: 0;-->
+<!--            padding: 0;-->
+<!--        }-->
+
+<!--        h1 {-->
+<!--            text-align: center;-->
+<!--            color: #4CAF50;-->
+<!--            margin-top: 20px;-->
+<!--        }-->
+
+<!--        hr {-->
+<!--            border: 1px solid #4CAF50;-->
+<!--            width: 90%;-->
+<!--            margin: 20px auto;-->
+<!--        }-->
+
+<!--        /* Header links */-->
+<!--        a {-->
+<!--            text-decoration: none;-->
+<!--            color: #4CAF50;-->
+<!--            padding: 10px 20px;-->
+<!--            background-color: #e7f7e7;-->
+<!--            border-radius: 5px;-->
+<!--            margin: 0 10px;-->
+<!--        }-->
+
+<!--        a:hover {-->
+<!--            background-color: #4CAF50;-->
+<!--            color: white;-->
+<!--        }-->
+
+<!--        /* Table styling */-->
+<!--        table {-->
+<!--            width: 80%;-->
+<!--            margin: 30px auto;-->
+<!--            border-collapse: collapse;-->
+<!--            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);-->
+<!--            background-color: white;-->
+<!--        }-->
+
+<!--        th, td {-->
+<!--            padding: 12px;-->
+<!--            text-align: center;-->
+<!--            border: 1px solid #ddd;-->
+<!--        }-->
+
+<!--        th {-->
+<!--            background-color: #4CAF50;-->
+<!--            color: white;-->
+<!--        }-->
+
+<!--        td {-->
+<!--            background-color: #f9f9f9;-->
+<!--        }-->
+
+<!--        tr:hover {-->
+<!--            background-color: #f1f1f1;-->
+<!--        }-->
+
+<!--        /* Styling the footer and alignment of elements */-->
+<!--        .footer {-->
+<!--            text-align: center;-->
+<!--            margin-top: 40px;-->
+<!--        }-->
+
+<!--        .footer a {-->
+<!--            margin-top: 20px;-->
+<!--            display: inline-block;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--    <h1>Hospital X</h1>-->
+
+<!--    <hr>-->
+
+<!--    <div style="text-align: center;">-->
+<!--        <a th:href="@{/doctors}">Homepage</a>-->
+<!--    </div>-->
+
+<!--    <hr>-->
+
+<!--    <h2 style="text-align: center; color: #333;">Appointments</h2>-->
+
+<!--    <table>-->
+<!--        <thead>-->
+<!--            <tr>-->
+<!--                <th>Appointment ID</th>-->
+<!--                <th>Patient Name</th>-->
+<!--                <th>Date</th>-->
+<!--                <th>Prescription</th>-->
+<!--            </tr>-->
+<!--        </thead>-->
+<!--        <tbody>-->
+<!--            <tr th:each="appointment : ${Appointments}">-->
+<!--                <td th:text="${appointment.appointment_id}"></td>-->
+<!--                <td th:text="${appointment.patientName}"></td>-->
+<!--                <td th:text="${appointment.date}"></td>-->
+<!--                <td th:text="${appointment.prescription}"></td>-->
+<!--            </tr>-->
+<!--        </tbody>-->
+<!--    </table>-->
+
+<!--    <div class="footer">-->
+<!--        <hr>-->
+<!--        <a th:href="@{/doctors}">Back to Doctors</a>-->
+<!--    </div>-->
+
+<!--</body>-->
+<!--</html>-->
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Hospital Swersie - Appointments</title>
+    <style>
+        /* General body styling */
+        body {
+            background: linear-gradient(to bottom, #87ceeb, #1e90ff); /* Bluish gradient */
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #ffffff;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffffff;
+            background-color: #006400; /* Dark green */
+            padding: 15px;
+            border-radius: 10px;
+            width: 80%;
+            margin: 20px auto;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        hr {
+            border: 1px solid #006400;
+            width: 90%;
+            margin: 20px auto;
+        }
+
+        /* Header links */
+        a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            background-color: #006400;
+            border-radius: 5px;
+            margin: 0 10px;
+        }
+
+        a:hover {
+            background-color: #004d00;
+        }
+
+        /* Table styling */
+        table {
+            width: 80%;
+            margin: 30px auto;
+            border-collapse: collapse;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #ddd;
+            color: #333;
+        }
+
+        th {
+            background-color: #006400; /* Dark green */
+            color: white;
+        }
+
+        td {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Styling the footer and alignment of elements */
+        /*.footer {*/
+        /*    text-align: center;*/
+        /*    margin-top: 40px;*/
+        /*}*/
+
+        /* Footer styling */
+        .footer {
+            text-align: center;
+            margin-top: auto;
+            background-color: #006400; /* Dark Green */
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 10px 0;
+            font-size: 0.9rem;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Hospital X</h1>
+
+    <hr>
+
+    <div style="text-align: center;">
+        <a th:href="@{/doctors}">Homepage</a>
+    </div>
+
+    <hr>
+
+    <h2 style="text-align: center; color: #ffffff;">Appointments</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Appointment ID</th>
+                <th>Patient Name</th>
+                <th>Date</th>
+                <th>Prescription</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="appointment : ${Appointments}">
+                <td th:text="${appointment.appointment_id}"></td>
+                <td th:text="${appointment.patientName}"></td>
+                <td th:text="${appointment.date}"></td>
+                <td th:text="${appointment.prescription}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div style="text-align: center;">
+        <hr>
+        <a th:href="@{/doctors}">Back to Doctors</a>
+    </div>
+
+    <div class="footer">
+        <hr>
+        <p>&copy; 2024 Hospital X. All rights reserved.</p>
+    </div>
+
+</body>
+</html>
